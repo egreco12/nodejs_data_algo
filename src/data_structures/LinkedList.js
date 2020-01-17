@@ -6,6 +6,19 @@ export default class LinkedList {
     this.tail = null;
   }
 
+  prepend(value) {
+    const newNode = new LinkedListNode(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    return newNode;
+  }
+  
   append(value) {
     const newNode = new LinkedListNode(value);
     if (!this.head) {
@@ -20,12 +33,13 @@ export default class LinkedList {
     return newNode;
   }
 
-  head() {
-    return this.head;
-  }
+  deleteHead() {
+    if (!this.head) {
+      // No head to delete, bail
+      return;
+    }
 
-  tail() {
-    return this.tail;
+    this.head = this.head.next;
   }
 
   delete(value) {

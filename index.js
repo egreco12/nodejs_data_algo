@@ -8,3 +8,8 @@ k.append(6);
 k.append(7);
 k.delete(5);
 k.print();
+k.prepend(10);
+k.prepend(9);
+k.prepend(8);
+
+k.print();
