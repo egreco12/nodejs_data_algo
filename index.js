@@ -5,6 +5,6 @@ let k = new Stack();
 
 k.push(7);
 k.push(8);
-k.linkedList.print();
+k.print();
 k.pop();
-k.linkedList.print();
+k.print();

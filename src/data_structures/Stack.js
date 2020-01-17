@@ -15,6 +15,18 @@ export default class Stack {
   }
 
   peek() {
-    return this.linkedList.head;
-  } 
+    if (this.linkedList.head) {
+      return this.linkedList.head.value;
+    } 
+
+    return null;
+  }
+
+  isEmpty() {
+    return !this.linkedList.head;
+  }
+
+  print() {
+    return this.linkedList.print();
+  }
 };
