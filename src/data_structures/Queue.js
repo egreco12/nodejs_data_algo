@@ -14,7 +14,8 @@ export default class Queue {
   }
 
   dequeue(value) {
-    return this.linkedList.deleteTail().value;
+    const removed = this.linkedList.deleteTail();
+    return removed ? removed.value : null;
   }
 
   print() {
