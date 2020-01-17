@@ -25,7 +25,6 @@ export default class LinkedList {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      console.log("WE HERE");
       this.tail.next = newNode;
       this.tail = newNode;
     }
@@ -39,7 +38,9 @@ export default class LinkedList {
       return;
     }
 
+    const oldHead = this.head;
     this.head = this.head.next;
+    return oldHead;
   }
 
   delete(value) {

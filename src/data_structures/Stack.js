@@ -6,8 +6,15 @@ export default class Stack {
   }
 
   push(value) {
-    this.items.push(value);
+    this.linkedList.prepend(value);
+    return this.linkedList.head
   }
 
-  
+  pop() {
+    return this.linkedList.deleteHead();
+  }
+
+  peek() {
+    return this.linkedList.head;
+  } 
 };
