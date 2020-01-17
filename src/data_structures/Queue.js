@@ -5,11 +5,19 @@ export default class Queue {
     this.linkedList = new LinkedList();
   }
 
+  peek() {
+    return this.linkedList.tail.value;
+  }
+
   enqueue(value) {
-    return this.linkedList.append(value);
+    return this.linkedList.prepend(value).value;
   }
 
   dequeue(value) {
-    return this.linkedList.deleteTail();
+    return this.linkedList.deleteTail().value;
+  }
+
+  print() {
+    this.linkedList.print();
   }
 }
