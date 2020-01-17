@@ -32,6 +32,20 @@ export default class LinkedList {
     return newNode;
   }
 
+  find(value, compareCallback) {
+    let curr = this.head;
+    while(curr) {
+      if (compareCallback(curr.value, value)) {
+        return curr;
+      }
+
+      curr = curr.next;
+    }
+
+    // If we fall to here, we didn't find it
+    return null;
+  }
+
   deleteHead() {
     if (!this.head) {
       // No head to delete, bail

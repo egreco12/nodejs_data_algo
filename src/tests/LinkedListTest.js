@@ -10,4 +10,8 @@ if (ll1.head.value !== 1 || ll1.tail.value !== 2) {
   console.log('LL broken, fix it');
 }
 
-
+// Try with objects
+const val = {key: 'hello', value: 'world'};
+const ll2 = new LinkedList();
+ll2.append(val);
+console.log(ll2.find(val, (a,b) => {return a.key === b.key}).value);
