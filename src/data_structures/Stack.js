@@ -7,11 +7,12 @@ export default class Stack {
 
   push(value) {
     this.linkedList.prepend(value);
-    return this.linkedList.head
+    return this.linkedList.head.value;
   }
 
   pop() {
-    return this.linkedList.deleteHead();
+    const popped = this.linkedList.deleteHead();
+    return popped ? popped.value : null;
   }
 
   peek() {
