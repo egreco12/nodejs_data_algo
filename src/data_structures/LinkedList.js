@@ -32,11 +32,12 @@ export default class LinkedList {
     return newNode;
   }
 
-  find(value, compareCallback) {
+  find(compareCallback) {
     let curr = this.head;
     while(curr) {
-      if (compareCallback(curr.value, value)) {
-        return curr;
+      let res = compareCallback(curr.value);
+      if (compareCallback(curr.value)) {
+        return curr.value;
       }
 
       curr = curr.next;
