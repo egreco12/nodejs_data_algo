@@ -14,4 +14,8 @@ if (ll1.head.value !== 1 || ll1.tail.value !== 2) {
 const val = {key: 'hello', value: 'world'};
 const ll2 = new LinkedList();
 ll2.append(val);
-console.log(ll2.find(val, (a,b) => {return a.key === b.key}).value);
+const res = ll2.find(val, (a,b) => {return a.key === b.key});
+
+if (res.value.key !== 'hello' || res.value.value !== 'world') {
+  console.log('LL find broke');
+}
