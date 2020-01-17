@@ -43,6 +43,31 @@ export default class LinkedList {
     return oldHead;
   }
 
+  deleteTail() {
+    const deletedNode = this.tail;
+    
+    if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+      return deletedTail;
+    }
+
+    let curr = this.head;
+
+    while(curr.next) {
+      // If next node is tail, chop it off
+      if (!curr.next.next) {
+        curr.next = null;
+      } else {
+        curr = curr.next;
+      }
+    }
+
+    this.tail = curr;
+
+    return deletedNode;
+  }
+
   delete(value) {
     let currNode = this.head;
     let previous = null;
