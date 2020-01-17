@@ -5,5 +5,11 @@ export default class Queue {
     this.linkedList = new LinkedList();
   }
 
+  enqueue(value) {
+    return this.linkedList.append(value);
+  }
 
+  dequeue(value) {
+    return this.linkedList.deleteTail();
+  }
 }
